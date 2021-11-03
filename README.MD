@@ -1,6 +1,6 @@
-### Usage example
+### PHP script Usage example
 ```
- php backup.php -u homestead -p secret -d eve -f /var/backups
+ php backup.php -u user_name -p user_password -d database_name -f /var/backups
 ```
 
 **Params**
@@ -12,3 +12,15 @@
 - `-h` `--host` (optional) database host; default: `127.0.0.1`
 - `-o` `--port` (optional) database port; default: `3306`
 
+
+### Bash script Usage example
+```
+  sh backup.sh -u user_name -p user_password -d database_name -f /var/backups
+```
+
+**Params**
+
+- `-u` database username
+- `-p` database password
+- `-d` database name
+- `-f` folder to store backup
