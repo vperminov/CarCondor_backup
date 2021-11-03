@@ -13,10 +13,14 @@ while [ -n "$1" ]; do
 done
 
 DATE=$(date +%d.%m.%Y:%H.%M.%S)
-FILENAME=$FOLDER/db-backup-$DATE.sql
+FILENAME=db-backup-$DATE.sql
+FILEPATH=$FOLDER/$FILENAME
+
 ARHIVED=$FOLDER/db-backup-$DATE.tar.gz
 
-mysqldump --force --opt --add-drop-table --user=$DBUSER --password=$DBPASS --databases $DBNAME >$FILENAME
-tar -czf $ARHIVED $FILENAME
-rm $FILENAME
+mysqldump --force --opt --add-drop-table --user=$DBUSER --password=$DBPASS --databases $DBNAME >$FILEPATH
+
+tar -czvf $ARHIVED -C $FOLDER $FILENAME
+
+rm $FILEPATH
 echo "Backup done, the file name is: "$ARHIVED
