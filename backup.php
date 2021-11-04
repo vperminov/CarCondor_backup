@@ -99,7 +99,7 @@ class Backup
     {
         $this->connection = new mysqli($this->host, $this->dbUser, $this->dbPass, $this->dbName);
         if ($this->connection->connect_errno) {
-            throw new RuntimeException('ошибка соединения mysqli: ' . $this->connection->connect_error);
+            throw new RuntimeException('mysqli connection error: ' . $this->connection->connect_error);
         }
     }
 

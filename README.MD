@@ -24,3 +24,15 @@
 - `-p` database password
 - `-d` database name
 - `-f` folder to store backup
+
+### PHP import script Usage example
+```
+  php import.php -u user_name -p user_password -d database_name -f /var/backups/db-backup.tar.gz
+```
+
+**Params**
+
+- `-u` database username
+- `-p` database password
+- `-d` database name
+- `-f` backup file (can be *.sql or *.tar.gz)
